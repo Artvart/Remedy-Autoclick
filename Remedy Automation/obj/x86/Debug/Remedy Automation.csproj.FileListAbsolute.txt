@@ -1,0 +1,18 @@
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\bin\Debug\Remedy Automation.exe
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\bin\Debug\Remedy Automation.pdb
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\Remedy_Automation.Form1.resources
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\Remedy_Automation.Properties.Resources.resources
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\Remedy Automation.exe
+C:\Users\Avart\AppData\Local\Temporary Projects\Remedy Automation\obj\x86\Debug\Remedy Automation.pdb
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\Remedy Automation.exe
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\Remedy Automation.pdb
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\bin\Debug\Remedy Automation.exe
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\bin\Debug\Remedy Automation.pdb
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\Remedy_Automation.Form1.resources
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\Remedy_Automation.Properties.Resources.resources
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Debug\GenerateResource.write.1.tlog
