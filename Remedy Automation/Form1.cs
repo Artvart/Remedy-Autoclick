@@ -75,27 +75,34 @@ namespace Remedy_Automation
             switch ((int)m.WParam)
             {
                 case WM_HOTKEY1:
-                    IntPtr MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Система Автоматизированной Эксплуатации Сети  МТС (Поиск)]");
-                    IntPtr MakrosHwnd1 = FindWindowEx(MainHwnd, (IntPtr)0, "AfxControlBar70", "");
-                    Rectangle myRect = new Rectangle();
-                    //IntPtr MakrosHwnd2 = FindWindowEx(MakrosHwnd1, (IntPtr)0, "ToolbarWindow32", "Макрокоманда");
-                    //IntPtr Makros_combox = FindWindowEx(MakrosHwnd2, (IntPtr)0, "ComboBox", "");
-                    //MessageBox.Show(MakrosHwnd2.ToString());
 
+                    IntPtr MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Система Автоматизированной Эксплуатации Сети  МТС (Поиск)]");
+                    Rectangle myRect = new Rectangle();
                     RECT rct;
                     if (!GetWindowRect(MainHwnd, out rct))
                     {
                         MessageBox.Show("Remedy not found. Mb it's not in an acidents screen?");
                         return;
                     }
-                    //Отладка отлова позиции окна ремеди
-                    //MessageBox.Show("X " + rct.Left.ToString() + "Y " + rct.Top.ToString());
+                    //Test this later
+                    ////Move Remedy to the foreground
+                    //try
+                    //{
+                    //    Process[] p = Process.GetProcessesByName("Remedy");
+                    //    SetForegroundWindow(p[0].MainWindowHandle);
+                    //}
+                    //catch
+                    //{
+                    //    MessageBox.Show("Some problems with bringing window to front");
+                    //}
+
                     myRect.X = rct.Left;
                     myRect.Y = rct.Top;
-                    
-                    SetCursorPos(myRect.X+500, myRect.Y+70);
-                    
-                    //Mouse Click to POWER_CREATE
+
+                    //Mouse Move to Macros window
+                    SetCursorPos(myRect.X+500, myRect.Y+70);                   
+                    //Mouse Click to macros and then POWER_CREATE macros.
+                    // Dnt forget later add here autoclick for Power_create without macros using.
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     SetCursorPos(myRect.X + 500, myRect.Y + 85);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
@@ -109,22 +116,6 @@ namespace Remedy_Automation
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     break;
                 case WM_HOTKEY2:
-                    //label1.Text = Cursor.Position.X.ToString();
-                    //label2.Text = Cursor.Position.Y.ToString();
-                    try
-                    {
-                        //Process p = Process.GetProcessById();
-                        Process[] p = Process.GetProcessesByName("notepad");
-
-                        //ShowWindow(p.MainWindowHandle, 1);
-                        //SetWindowPos(p.MainWindowHandle, new IntPtr(-1), 0, 0, 0, 0, 3);
-
-                        SetForegroundWindow(p[0].MainWindowHandle);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Some problems with bringing window to front");
-                    }
                     break;
                 case WM_HOTKEY3:
                     MessageBox.Show("F9");
@@ -132,7 +123,7 @@ namespace Remedy_Automation
             }
             base.WndProc(ref m);
         }
-
+        
 		//Form close
         private void button1_Click(object sender, EventArgs e)
         {
@@ -153,11 +144,6 @@ namespace Remedy_Automation
             WindowState = FormWindowState.Normal;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
@@ -172,11 +158,6 @@ namespace Remedy_Automation
             };
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -187,16 +168,6 @@ namespace Remedy_Automation
 
             //WindowState = FormWindowState.Minimized;
             //this.Opacity = 0.70;
-        }
-
-        private void Form1_Deactivate(object sender, EventArgs e)
-        {
-            //this.Opacity = 0.650;
-        }
-
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            //this.Opacity = 1;
         }
     }
 }

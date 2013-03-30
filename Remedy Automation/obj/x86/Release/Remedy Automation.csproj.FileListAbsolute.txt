@@ -7,3 +7,12 @@ C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Au
 C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Release\Remedy Automation.exe
 C:\Users\Avart\documents\visual studio 2010\Projects\Remedy Automation\Remedy Automation\obj\x86\Release\Remedy Automation.pdb
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\Remedy_Automation.Form1.resources
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\Remedy_Automation.Properties.Resources.resources
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\Remedy Automation.exe
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\bin\Release\Remedy Automation.exe
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\bin\Release\Remedy Automation.pdb
+C:\Users\Avart\Documents\GitHub\Remedy-Autoclick\Remedy Automation\obj\x86\Release\Remedy Automation.pdb

@@ -71,7 +71,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 153);
+            this.button2.Location = new System.Drawing.Point(12, 155);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 23);
             this.button2.TabIndex = 3;
@@ -95,7 +95,6 @@
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(93, 26);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // exitToolStripMenuItem
             // 
@@ -129,10 +128,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Remedy Automation ";
-            this.Activated += new System.EventHandler(this.Form1_Activated);
-            this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
