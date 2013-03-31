@@ -36,6 +36,9 @@ namespace Remedy_Automation
 		
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool Beep(int frequency, int duration);
 		       
         // Hotkeys optional keys
         public const int MOD_ALT = 1;
@@ -46,6 +49,7 @@ namespace Remedy_Automation
         public const int WM_HOTKEY1 = 0x312;
         public const int WM_HOTKEY2 = 0x313;
         public const int WM_HOTKEY3 = 0x314;
+        public const int WM_HOTKEY4 = 0x315;
 		// Mouse buttons
         static int WM_LBUTTONDOWN = 0x02;
         static int WM_LBUTTONUP = 0x04;
@@ -54,9 +58,10 @@ namespace Remedy_Automation
         {
             InitializeComponent();
             // Creating global hotkeys after form initialization. 
-            RegisterHotKey(this.Handle, WM_HOTKEY1, MOD_ALT, (int)Keys.F7);
-            RegisterHotKey(this.Handle, WM_HOTKEY2, MOD_ALT, (int)Keys.F8);
-            RegisterHotKey(this.Handle, WM_HOTKEY3, MOD_ALT, (int)Keys.F9);
+            RegisterHotKey(this.Handle, WM_HOTKEY1, 0, (int)Keys.F7);
+            RegisterHotKey(this.Handle, WM_HOTKEY2, MOD_ALT, (int)Keys.F7);
+            RegisterHotKey(this.Handle, WM_HOTKEY3, MOD_ALT, (int)Keys.F8);
+            RegisterHotKey(this.Handle, WM_HOTKEY4, MOD_ALT, (int)Keys.F9);
         }
 
 		//Rectangle structure for window position IN/OUT
@@ -67,6 +72,9 @@ namespace Remedy_Automation
             public int Right;       // x position of lower-right corner
             public int Bottom;      // y position of lower-right corner
         }
+        
+        Rectangle myRect = new Rectangle();
+        RECT rct;
 
 		//Hotkey rections here
         protected override void WndProc(ref Message m)
@@ -74,21 +82,19 @@ namespace Remedy_Automation
             //Hotkey check.
             switch ((int)m.WParam)
             {
-                case WM_HOTKEY1:
+                case WM_HOTKEY2:
 
                     IntPtr MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Система Автоматизированной Эксплуатации Сети  МТС (Поиск)]");
-                    Rectangle myRect = new Rectangle();
-                    RECT rct;
                     if (!GetWindowRect(MainHwnd, out rct))
                     {
-                        MessageBox.Show("Remedy not found. Mb it's not in an acidents screen?");
+                        MessageBox.Show(MainHwnd.ToString());
                         return;
                     }
-                    //Test this later
+                    
                     ////Move Remedy to the foreground
                     //try
                     //{
-                    //    Process[] p = Process.GetProcessesByName("Remedy");
+                    //    Process[] p = Process.GetProcessesByName("aruser");
                     //    SetForegroundWindow(p[0].MainWindowHandle);
                     //}
                     //catch
@@ -115,9 +121,41 @@ namespace Remedy_Automation
                     SetCursorPos(myRect.X + 469, myRect.Y + 432);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     break;
-                case WM_HOTKEY2:
+                case WM_HOTKEY1:
+
+                    MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Инцидент (Новый)]");
+                    if (!GetWindowRect(MainHwnd, out rct))
+                    {
+                        MessageBox.Show("Remedy not found. Mb it's not in an acidents screen?");
+                        return;
+                    }
+
+                    myRect.X = rct.Left;
+                    myRect.Y = rct.Top;
+
+                    SetCursorPos(myRect.X + 897, myRect.Y + 644);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 227, myRect.Y + 710);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    System.Threading.Thread.Sleep(500);
+                    //SendKeys.Send("^+{LEFT}");
+                    SendKeys.Send("Прочие");
+                    SetCursorPos(myRect.X + 520, myRect.Y + 625);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 500, myRect.Y + 768);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 375, myRect.Y + 748);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 310, myRect.Y + 905);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 310, myRect.Y + 925);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     break;
                 case WM_HOTKEY3:
+                    label1.Text = "X = " + Cursor.Position.X.ToString();
+                    label2.Text = "Y = " + Cursor.Position.Y.ToString();
+                    break;
+                case WM_HOTKEY4:
                     MessageBox.Show("F9");
                     break;
             }
@@ -165,7 +203,6 @@ namespace Remedy_Automation
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             //WindowState = FormWindowState.Minimized;
             //this.Opacity = 0.70;
         }

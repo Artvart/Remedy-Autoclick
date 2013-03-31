@@ -43,7 +43,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 182);
+            this.button1.Location = new System.Drawing.Point(12, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 23);
             this.button1.TabIndex = 0;
@@ -71,12 +71,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 155);
+            this.button2.Location = new System.Drawing.Point(12, 160);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "ToFront";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // notifyIcon1
@@ -86,7 +87,6 @@
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Hi there!";
-            this.notifyIcon1.Visible = true;
             this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // contextMenuStrip1
@@ -110,8 +110,9 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(220, 122);
             this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "Remedy Autoclick test version\n\nLeftAlt + F7 - Power create\nLeftAlt + F8 - Get cur" +
-                "sor pos (for debug)\nLeftAlt + F9 - Nothing\n\nby Voronetsky Dm.";
+            this.richTextBox1.Text = "Remedy Autoclick test version\n\nLeftAlt + F7 - Power create\n\nF7 - Power fields aut" +
+                "oclick\n\nLeftAlt + F8 - Get cursor pos (for debug)\nLeftAlt + F9 - Nothing\n\nby Vor" +
+                "onetsky Dm.";
             // 
             // Form1
             // 
