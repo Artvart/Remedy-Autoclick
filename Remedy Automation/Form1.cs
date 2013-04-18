@@ -50,6 +50,7 @@ namespace Remedy_Automation
         public const int WM_HOTKEY2 = 0x313;
         public const int WM_HOTKEY3 = 0x314;
         public const int WM_HOTKEY4 = 0x315;
+        public const int WM_HOTKEY5 = 0x316;
 		// Mouse buttons
         static int WM_LBUTTONDOWN = 0x02;
         static int WM_LBUTTONUP = 0x04;
@@ -58,10 +59,11 @@ namespace Remedy_Automation
         {
             InitializeComponent();
             // Creating global hotkeys after form initialization. 
-            RegisterHotKey(this.Handle, WM_HOTKEY1, 0, (int)Keys.F7);
-            RegisterHotKey(this.Handle, WM_HOTKEY2, MOD_ALT, (int)Keys.F7);
+            RegisterHotKey(this.Handle, WM_HOTKEY1, 0, (int)Keys.F8);
+            RegisterHotKey(this.Handle, WM_HOTKEY2, 0, (int)Keys.F7);
             RegisterHotKey(this.Handle, WM_HOTKEY3, MOD_ALT, (int)Keys.F8);
-            RegisterHotKey(this.Handle, WM_HOTKEY4, MOD_ALT, (int)Keys.F9);
+            RegisterHotKey(this.Handle, WM_HOTKEY4, 0, (int)Keys.F9);
+            RegisterHotKey(this.Handle, WM_HOTKEY5, 0, (int)Keys.F10);
         }
 
 		//Rectangle structure for window position IN/OUT
@@ -105,12 +107,13 @@ namespace Remedy_Automation
                     myRect.X = rct.Left;
                     myRect.Y = rct.Top;
 
-                    //Mouse Move to Macros window
-                    SetCursorPos(myRect.X+500, myRect.Y+70);                   
+                    //Mouse Move to create incident link
+                    SetCursorPos(myRect.X+50, myRect.Y+305);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     //Mouse Click to macros and then POWER_CREATE macros.
                     // Dnt forget later add here autoclick for Power_create without macros using.
+                    SetCursorPos(myRect.X + 137, myRect.Y + 245);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 500, myRect.Y + 85);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
 
                     //Кликнуть в элемент сети.
@@ -133,22 +136,23 @@ namespace Remedy_Automation
                     myRect.X = rct.Left;
                     myRect.Y = rct.Top;
 
-                    SetCursorPos(myRect.X + 897, myRect.Y + 644);
+                    SetCursorPos(myRect.X + 2344-1680, myRect.Y + 621);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 227, myRect.Y + 710);
+                    //выделение
+                    SetCursorPos(myRect.X + 228, myRect.Y + 695);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     System.Threading.Thread.Sleep(500);
                     //SendKeys.Send("^+{LEFT}");
                     SendKeys.Send("Прочие");
-                    SetCursorPos(myRect.X + 520, myRect.Y + 625);
+                    SetCursorPos(myRect.X + 2462-1680, myRect.Y + 625);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 500, myRect.Y + 768);
+                    SetCursorPos(myRect.X + 2179-1680, myRect.Y + 746);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 375, myRect.Y + 748);
+                    SetCursorPos(myRect.X + 2174-1680, myRect.Y + 742);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 310, myRect.Y + 905);
+                    SetCursorPos(myRect.X + 314, myRect.Y + 901);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
-                    SetCursorPos(myRect.X + 310, myRect.Y + 925);
+                    SetCursorPos(myRect.X + 314, myRect.Y + 911);
                     mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     break;
                 case WM_HOTKEY3:
@@ -156,7 +160,46 @@ namespace Remedy_Automation
                     label2.Text = "Y = " + Cursor.Position.Y.ToString();
                     break;
                 case WM_HOTKEY4:
-                    MessageBox.Show("F9");
+                    MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Система Автоматизированной Эксплуатации Сети  МТС (Поиск)]");
+                    if (!GetWindowRect(MainHwnd, out rct))
+                    {
+                        MessageBox.Show(MainHwnd.ToString());
+                        return;
+                    }
+                    
+                    myRect.X = rct.Left;
+                    myRect.Y = rct.Top;
+
+                    //Mouse Move to create incident link
+                    SetCursorPos(myRect.X+50, myRect.Y+305);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    
+                    SetCursorPos(myRect.X + 137, myRect.Y + 544);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+
+                    SetCursorPos(myRect.X + 463, myRect.Y + 402);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 345, myRect.Y + 795);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 493, myRect.Y + 557);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+
+                    //Кликнуть в элемент сети.
+                    //IntPtr MainHwnd = FindWindow("ArFrame", "BMC Remedy User - [Инцидент (Новый)]");
+                    SetCursorPos(myRect.X + 482, myRect.Y + 312);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    //Кликнуть в поле ввода
+                    SetCursorPos(myRect.X + 469, myRect.Y + 432);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    break;
+                case WM_HOTKEY5:
+                    SetCursorPos(myRect.X + 2462-1680, myRect.Y + 625);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 314, myRect.Y + 901);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
+                    SetCursorPos(myRect.X + 314, myRect.Y + 911);
+                    mouse_event(WM_LBUTTONDOWN | WM_LBUTTONUP, 0, 0, 0, 0);
                     break;
             }
             base.WndProc(ref m);

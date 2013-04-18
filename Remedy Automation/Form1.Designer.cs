@@ -110,9 +110,9 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(220, 122);
             this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "Remedy Autoclick test version\n\nLeftAlt + F7 - Power create\n\nF7 - Power fields aut" +
-                "oclick\n\nLeftAlt + F8 - Get cursor pos (for debug)\nLeftAlt + F9 - Nothing\n\nby Vor" +
-                "onetsky Dm.";
+            this.richTextBox1.Text = "Remedy Autoclick test version\n\nF7 - Power create\nF8 - Power autofill\nF9 - BCCH do" +
+                "wn create\nF10 - BCCH down autofill\n\nLeftAlt + F8 - Get cursor pos (for debug)\nby" +
+                " Voronetsky Dm.";
             // 
             // Form1
             // 
