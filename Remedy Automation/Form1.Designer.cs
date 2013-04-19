@@ -75,9 +75,8 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "ToFront";
+            this.button2.Text = "Expand";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // notifyIcon1
@@ -118,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 217);
+            this.ClientSize = new System.Drawing.Size(237, 217);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
